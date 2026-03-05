@@ -34,6 +34,9 @@ class GildedRose(object):
             else:
                 self.diminuer_qualite(item)
 
+            item.sell_in -= 1
+
+
 
 class Item:
     def __init__(self, name, sell_in, quality):
