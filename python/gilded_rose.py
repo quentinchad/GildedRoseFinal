@@ -9,6 +9,10 @@ class GildedRose(object):
         if item.quality < 50:
             item.quality += 1
 
+    def diminuer_qualite(self, item):
+        if item.quality > 0:
+            item.quality -= 1
+
     def update_quality(self):
         for item in self.items:
             if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert":
