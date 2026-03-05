@@ -37,6 +37,18 @@ class GildedRose(object):
             item.sell_in -= 1
 
 
+            if item.sell_in < 0:
+
+                if item.name == "Aged Brie":
+                    self.augmenter_qualite(item)
+
+                elif item.name == "Backstage passes to a TAFKAL80ETC concert":
+                    item.quality = 0
+
+                else:
+                    self.diminuer_qualite(item)
+
+
 
 class Item:
     def __init__(self, name, sell_in, quality):
