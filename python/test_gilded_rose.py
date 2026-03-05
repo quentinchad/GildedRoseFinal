@@ -25,6 +25,13 @@ class GildedRoseTest(unittest.TestCase):
         self.assertEqual(4, items[0].sell_in)
         self.assertEqual(0, items[0].quality)
 
+    def test_item_normal_diminue_qualite_double_apres_sell_in(self):
+        items = [Item("normal", 0, 5)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEqual(-1, items[0].sell_in)
+        self.assertEqual(3, items[0].quality)
+
         
 if __name__ == '__main__':
     unittest.main()
